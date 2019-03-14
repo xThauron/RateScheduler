@@ -19,8 +19,13 @@ public class SchedulerServlet extends HttpServlet {
 
         IRateScheduler rateScheduler = rateSchedulerDetails.getInterestRateType().equals("desc") ? new DescRateScheduler() : new ConstRateScheduler();
         rateScheduler.generateInterestRateList(rateSchedulerDetails);
-
         request.setAttribute("interestRateList", rateScheduler.getInterestRateList());
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
+
+        if (request.getParameter("action").equals("pdf")) {
+            request.getRequestDispatcher("/pdf").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/index.jsp").forward(request, response);
+
+        }
     }
 }

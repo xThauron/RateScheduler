@@ -1,8 +1,7 @@
 <%@ page import="models.InterestRate" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 
 <head>
@@ -118,7 +117,9 @@
                         %>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Przelicz harmonogram spłat</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="online">Podgląd</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="pdf">Wygeneruj do PDF
+                        </button>
                     </div>
                 </form>
             </div>
