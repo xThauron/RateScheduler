@@ -28,13 +28,13 @@ public class PdfHelper {
         try {
             PdfWriter writer = new PdfWriter(byteArrayOutputStream);
             PdfDocument pdf = new PdfDocument(writer);
-            Document document = new Document(pdf, PageSize.A4.rotate());
+            Document document = new Document(pdf, PageSize.A4);
 
-            document.setMargins(20, 20, 20, 20);
+            document.setMargins(20, 100, 20, 100);
             PdfFont font = PdfFontFactory.createFont(FontConstants.TIMES_ROMAN, PdfEncodings.CP1250);
             PdfFont bold = PdfFontFactory.createFont(FontConstants.TIMES_BOLD, PdfEncodings.CP1250);
 
-            float[] pointColumnWidths = {1, 2, 2, 2, 3};
+            float[] pointColumnWidths = {6, 10, 10, 10, 12};
             Table table = new Table(pointColumnWidths);
             table.addHeaderCell(newCell("Nr raty", bold));
             table.addHeaderCell(newCell("Kwota kapitału", bold));

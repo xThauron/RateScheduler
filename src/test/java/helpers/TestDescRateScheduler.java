@@ -4,11 +4,8 @@ import models.InterestRate;
 import models.RateSchedulerDetails;
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
-
-public class TestDescRateScheduler extends Mockito {
+public class TestDescRateScheduler {
     @Test
     public void should_be_so_many_rates_as_demanded() {
         RateSchedulerDetails rateSchedulerDetails = new RateSchedulerDetails(4123, 33, 11, 11, "desc");

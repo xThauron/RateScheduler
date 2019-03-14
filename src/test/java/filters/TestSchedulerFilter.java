@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-import static org.junit.Assert.*;
-
 public class TestSchedulerFilter extends Mockito {
     private HttpServletRequest request;
     private HttpServletResponse response;

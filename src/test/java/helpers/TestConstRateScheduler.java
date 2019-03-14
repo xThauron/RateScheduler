@@ -4,11 +4,8 @@ import models.InterestRate;
 import models.RateSchedulerDetails;
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
-
-public class TestConstRateScheduler extends Mockito {
+public class TestConstRateScheduler {
     @Test
     public void should_all_rates_be_equal() {
         RateSchedulerDetails rateSchedulerDetails = new RateSchedulerDetails(6000, 12, 20, 0, "const");

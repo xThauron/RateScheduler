@@ -2,11 +2,8 @@ package validators;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.Mockito;
 
-import static org.junit.Assert.*;
-
-public class TestSchedulerValidator extends Mockito {
+public class TestSchedulerValidator {
     @Test
     public void should_be_five_errors_for_all_empty_fields() {
         SchedulerValidator schedulerValidator = new SchedulerValidator("", "", "", "", "");
