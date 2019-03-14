@@ -25,15 +25,15 @@ public class SchedulerValidator {
     }
 
     public void validate() {
-        if (isDoubleNegative(creditValue)) {
+        if (!isDoubleNonNegative(creditValue)) {
             errors.put("creditValue", "Wartość kredytu nie moze być mniejsza niż zero!");
         }
 
-        if (isDoubleNegative(interestPercent)) {
+        if (!isDoubleNonNegative(interestPercent)) {
             errors.put("interestPercent", "Oprocentowanie nie może być ujemne!");
         }
 
-        if (isDoubleNegative(interestConstPay)) {
+        if (!isDoubleNonNegative(interestConstPay)) {
             errors.put("interestConstPay", "Stała opłata nie może być mniejsza niż zero!");
         }
 
@@ -50,7 +50,7 @@ public class SchedulerValidator {
         return errors;
     }
 
-    private boolean isDoubleNegative(String value) {
+    private boolean isDoubleNonNegative(String value) {
         try {
             double valueDouble = Double.parseDouble(value);
             if (valueDouble < 0)
