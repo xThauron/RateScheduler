@@ -7,13 +7,13 @@
     HashMap<String, String> errors = (HashMap<String, String>) request.getAttribute("errrors");
     String creditValue = "";
     String interestRateAmount = "";
-    String interest = "";
+    String interestPercent = "";
     String interestConstPay = "";
     String interestRateType = "";
     if (list != null) {
         creditValue = request.getParameter("creditValue");
         interestRateAmount = request.getParameter("interestRateAmount");
-        interest = request.getParameter("interest");
+        interestPercent = request.getParameter("interestPercent");
         interestConstPay = request.getParameter("interestConstPay");
         interestRateType = request.getParameter("interestRateType");
     }
@@ -72,18 +72,18 @@
                                value="<% out.print(interestRateAmount); %>"/>
                         <%
                             if (errors != null && errors.containsKey("interestRateAmount")) {
-                                out.print("<span class='text-danger'>" + errors.get("interestRateAmount") + "</span>");
+                                out.print("<span class=\"text-danger\">" + errors.get("interestRateAmount") + "</span>");
                             }
                         %>
                     </div>
 
                     <div class="form-group">
-                        <label for="interest">Oprocentowanie</label>
-                        <input class="form-control" type="text" name="interest" id="interest"
-                               value="<% out.print(interest); %>"/>
+                        <label for="interestPercent">Oprocentowanie</label>
+                        <input class="form-control" type="text" name="interestPercent" id="interestPercent"
+                               value="<% out.print(interestPercent); %>"/>
                         <%
-                            if (errors != null && errors.containsKey("interest")) {
-                                out.print("<span class='text-danger'>" + errors.get("interest") + "</span>");
+                            if (errors != null && errors.containsKey("interestPercent")) {
+                                out.print("<span class=\"text-danger\">" + errors.get("interestPercent") + "</span>");
                             }
                         %>
                     </div>
@@ -95,7 +95,7 @@
                                value="<% out.print(interestConstPay); %>"/>
                         <%
                             if (errors != null && errors.containsKey("interestConstPay")) {
-                                out.print("<span class='text-danger'>" + errors.get("interestConstPay") + "</span>");
+                                out.print("<span class=\"text-danger\">" + errors.get("interestConstPay") + "</span>");
                             }
                         %>
                     </div>
@@ -112,7 +112,7 @@
                         </select>
                         <%
                             if (errors != null && errors.containsKey("interestRateType")) {
-                                out.print("<span class='text-danger'>" + errors.get("interestRateType") + "</span>");
+                                out.print("<span class=\"text-danger\">" + errors.get("interestRateType") + "</span>");
                             }
                         %>
                     </div>

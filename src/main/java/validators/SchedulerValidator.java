@@ -42,7 +42,7 @@ public class SchedulerValidator {
         }
 
         if (!isValidInterestRateType(interestRateType)) {
-            errors.put("type", "Nieprawidłowy rodzaj oprocentowania!");
+            errors.put("interestRateType", "Nieprawidłowy rodzaj oprocentowania!");
         }
     }
 
