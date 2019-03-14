@@ -23,9 +23,10 @@ public class SchedulerServlet extends HttpServlet {
 
         if (request.getParameter("action").equals("pdf")) {
             request.getRequestDispatcher("/pdf").forward(request, response);
+        } else if (request.getParameter("action").equals("online")) {
+            request.getRequestDispatcher("/scheduler.jsp").forward(request, response);
         } else {
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
-
+            response.sendRedirect("/");
         }
     }
 }

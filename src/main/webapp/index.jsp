@@ -30,14 +30,13 @@
         }
     </style>
     <%
-        ArrayList<InterestRate> list = (ArrayList<InterestRate>) request.getAttribute("interestRateList");
         HashMap<String, String> errors = (HashMap<String, String>) request.getAttribute("errors");
         String creditValue = "";
         String interestRateAmount = "";
         String interestPercent = "";
         String interestConstPay = "";
         String interestRateType = "";
-        if (list != null) {
+        if (request.getParameter("action") != null) {
             creditValue = request.getParameter("creditValue");
             interestRateAmount = request.getParameter("interestRateAmount");
             interestPercent = request.getParameter("interestPercent");
@@ -50,7 +49,7 @@
 <body>
 <div class="container">
     <div class="starter-template">
-        <div class="row h-100 justify-content-center align-items-center">
+        <div class="row justify-content-center align-items-center">
             <div class="col-md-6">
                 <form action="scheduler" method="post">
                     <h2>Harmonogram spłat</h2>
@@ -117,46 +116,13 @@
                         %>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary" name="action" value="online">Podgląd</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="online">Wygeneruj online
+                        </button>
                         <button type="submit" class="btn btn-primary" name="action" value="pdf">Wygeneruj do PDF
                         </button>
                     </div>
                 </form>
             </div>
-            <%
-                if (list != null) {
-            %>
-            <div class="col-md-6">
-                <table class="table text-center">
-                    <thead>
-                    <tr>
-                        <th>Nr raty</th>
-                        <th>Kwota Kapitału</th>
-                        <th>Kwota odsetek</th>
-                        <th>Opłaty stałe</th>
-                        <th>Całkowita kwota raty</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <%
-                        int id = 1;
-                        for (InterestRate interestRate : list) {
-                            out.println("<tr>");
-                            out.println("<td>" + id + "</td>");
-                            out.println("<td>" + String.format("%10.2f", interestRate.getCapitalValue()) + "</td>");
-                            out.println("<td>" + String.format("%10.2f", interestRate.getTaxValue()) + "</td>");
-                            out.println("<td>" + String.format("%10.2f", interestRate.getConstPayValue()) + "</td>");
-                            out.println("<td>" + String.format("%10.2f", interestRate.getTotalRateValue()) + "</td>");
-                            out.println("</tr>");
-                            id++;
-                        }
-                    %>
-                    </tbody>
-                </table>
-            </div>
-            <%
-                }
-            %>
         </div>
     </div>
 </div>

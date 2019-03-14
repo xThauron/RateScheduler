@@ -28,6 +28,10 @@ public class RateSchedulerDetails {
         return interestPercent / 100;
     }
 
+    public double getInterestPercent() {
+        return interestPercent;
+    }
+
     public double getInterestConstPay() {
         return interestConstPay;
     }
