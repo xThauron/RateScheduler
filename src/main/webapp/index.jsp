@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     ArrayList<InterestRate> list = (ArrayList<InterestRate>) request.getAttribute("interestRateList");
-    HashMap<String, String> errors = (HashMap<String, String>) request.getAttribute("errrors");
+    HashMap<String, String> errors = (HashMap<String, String>) request.getAttribute("errors");
     String creditValue = "";
     String interestRateAmount = "";
     String interestPercent = "";
