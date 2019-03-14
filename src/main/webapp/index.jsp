@@ -52,7 +52,7 @@
     <div class="starter-template">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="col-md-6">
-                <form action="schedule" method="post">
+                <form action="scheduler" method="post">
                     <h2>Harmonogram spłat</h2>
 
                     <div class="form-group mt-4">

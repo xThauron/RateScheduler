@@ -55,9 +55,9 @@ public class SchedulerValidator {
             double valueDouble = Double.parseDouble(value);
             if (valueDouble < 0)
                 throw new IllegalArgumentException();
-            return false;
-        } catch (Exception e) {
             return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
@@ -73,7 +73,7 @@ public class SchedulerValidator {
     }
 
     private boolean isValidInterestRateType(String value) {
-        return value.equals("DESC") || value.equals("CONST");
+        return value.equals("desc") || value.equals("const");
     }
 
 

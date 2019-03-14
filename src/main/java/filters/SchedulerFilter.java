@@ -1,5 +1,6 @@
 package filters;
 
+import jdk.nashorn.internal.ir.RuntimeNode;
 import models.RateSchedulerDetails;
 import validators.SchedulerValidator;
 
@@ -39,7 +40,7 @@ public class SchedulerFilter implements Filter {
             chain.doFilter(request, response);
         } else {
             request.setAttribute("errors", schedulerValidator.getErrors());
-
+            request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 
