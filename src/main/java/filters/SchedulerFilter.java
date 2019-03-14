@@ -1,6 +1,6 @@
 package filters;
 
-import models.RateScheduler.RateSchedulerDetails;
+import models.RateSchedulerDetails;
 import validators.SchedulerValidator;
 
 import javax.servlet.*;
@@ -19,10 +19,10 @@ public class SchedulerFilter implements Filter {
         response.setCharacterEncoding("UTF-8");
 
         String creditValueParam = request.getParameter("creditValue");
-        String interestRateAmountParam = request.getParameter("interestRateAmount");
+        String interestRateAmountParam = request.getParameter("interestPercent");
         String interestPercentParam = request.getParameter("interestPercent");
         String interestConstPayParam = request.getParameter("interestConstPay");
-        String interestRateTypeParam = request.getParameter("type");
+        String interestRateTypeParam = request.getParameter("interestRateType");
 
         SchedulerValidator schedulerValidator = new SchedulerValidator(creditValueParam, interestRateAmountParam, interestPercentParam, interestConstPayParam, interestRateTypeParam);
         schedulerValidator.validate();

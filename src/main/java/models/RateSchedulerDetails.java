@@ -1,4 +1,4 @@
-package models.RateScheduler;
+package models;
 
 import org.hibernate.validator.constraints.NotEmpty;
 

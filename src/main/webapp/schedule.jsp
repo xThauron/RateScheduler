@@ -1,4 +1,4 @@
-<%@ page import="models.RateScheduler.InterestRate" %>
+<%@ page import="models.InterestRate" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>

@@ -1,7 +1,7 @@
 package helpers;
 
-import models.RateScheduler.InterestRate;
-import models.RateScheduler.RateSchedulerDetails;
+import models.InterestRate;
+import models.RateSchedulerDetails;
 
 public class ConstRateScheduler extends RateScheduler implements IRateScheduler {
     public ConstRateScheduler() {

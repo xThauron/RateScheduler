@@ -1,4 +1,4 @@
-package models.RateScheduler;
+package models;
 
 public class InterestRate {
     private double capitalValue;

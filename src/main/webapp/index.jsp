@@ -1,4 +1,4 @@
-<%@ page import="models.RateScheduler.InterestRate" %>
+<%@ page import="models.InterestRate" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -11,11 +11,11 @@
     String interestConstPay = "";
     String interestRateType = "";
     if (list != null) {
-        creditValue = request.getParameter("credit_value");
-        interestRateAmount = request.getParameter("interest_rate_amount");
+        creditValue = request.getParameter("creditValue");
+        interestRateAmount = request.getParameter("interestRateAmount");
         interest = request.getParameter("interest");
-        interestConstPay = request.getParameter("interest_const_pay");
-        interestRateType = request.getParameter("interest_rate_type");
+        interestConstPay = request.getParameter("interestConstPay");
+        interestRateType = request.getParameter("interestRateType");
     }
 
 %>
@@ -56,8 +56,8 @@
                     <h2>Harmonogram spłat</h2>
 
                     <div class="form-group mt-4">
-                        <label for="credit_value">Wnioskowana kwota kredytu</label>
-                        <input class="form-control" type="text" name="credit_value" id="credit_value"
+                        <label for="creditValue">Wnioskowana kwota kredytu</label>
+                        <input class="form-control" type="text" name="creditValue" id="creditValue"
                                value="<% out.print(creditValue); %>"/>
                         <%
                             if (errors != null && errors.containsKey("creditValue")) {
@@ -67,8 +67,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="interest_rate_amount">Ilość rat</label>
-                        <input class="form-control" type="text" name="interest_rate_amount" id="interest_rate_amount"
+                        <label for="interestRateAmount">Ilość rat</label>
+                        <input class="form-control" type="text" name="interestRateAmount" id="interestRateAmount"
                                value="<% out.print(interestRateAmount); %>"/>
                         <%
                             if (errors != null && errors.containsKey("interestRateAmount")) {
@@ -90,8 +90,8 @@
 
 
                     <div class="form-group">
-                        <label for="interest_const_pay">Opłata stała</label>
-                        <input class="form-control" type="text" name="interest_const_pay" id="interest_const_pay"
+                        <label for="interestConstPay">Opłata stała</label>
+                        <input class="form-control" type="text" name="interestConstPay" id="interestConstPay"
                                value="<% out.print(interestConstPay); %>"/>
                         <%
                             if (errors != null && errors.containsKey("interestConstPay")) {
@@ -101,8 +101,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="interest_rate_type">Rodzaj rat</label>
-                        <select class="form-control" id="interest_rate_type" name="interest_rate_type">
+                        <label for="interestRateType">Rodzaj rat</label>
+                        <select class="form-control" id="interestRateType" name="interestRateType">
                             <option value="desc" <% if (interestRateType.equals("desc")) out.print("selected"); %>>
                                 malejąca
                             </option>

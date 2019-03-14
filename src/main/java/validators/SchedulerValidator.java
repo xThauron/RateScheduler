@@ -9,14 +9,14 @@ public class SchedulerValidator {
     private String interestRateAmount;
     private String interestPercent;
     private String interestConstPay;
-    private String type;
+    private String interestRateType;
 
-    public SchedulerValidator(String creditValue, String interestRateAmount, String interestPercent, String interestConstPay, String type) {
+    public SchedulerValidator(String creditValue, String interestRateAmount, String interestPercent, String interestConstPay, String interestRateType) {
         this.creditValue = creditValue;
         this.interestRateAmount = interestRateAmount;
         this.interestPercent = interestPercent;
         this.interestConstPay = interestConstPay;
-        this.type = type;
+        this.interestRateType = interestRateType;
         this.errors = new HashMap<String, String>();
     }
 
@@ -41,7 +41,7 @@ public class SchedulerValidator {
             errors.put("interestRateAmount", "Ilość rat musi być większa niż zero!");
         }
 
-        if (!isValidType(type)) {
+        if (!isValidInterestRateType(interestRateType)) {
             errors.put("type", "Nieprawidłowy rodzaj oprocentowania!");
         }
     }
@@ -72,7 +72,7 @@ public class SchedulerValidator {
         }
     }
 
-    private boolean isValidType(String value) {
+    private boolean isValidInterestRateType(String value) {
         return value.equals("DESC") || value.equals("CONST");
     }
 
