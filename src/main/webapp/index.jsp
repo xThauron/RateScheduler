@@ -2,23 +2,7 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.HashMap" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%
-    ArrayList<InterestRate> list = (ArrayList<InterestRate>) request.getAttribute("interestRateList");
-    HashMap<String, String> errors = (HashMap<String, String>) request.getAttribute("errors");
-    String creditValue = "";
-    String interestRateAmount = "";
-    String interestPercent = "";
-    String interestConstPay = "";
-    String interestRateType = "";
-    if (list != null) {
-        creditValue = request.getParameter("creditValue");
-        interestRateAmount = request.getParameter("interestRateAmount");
-        interestPercent = request.getParameter("interestPercent");
-        interestConstPay = request.getParameter("interestConstPay");
-        interestRateType = request.getParameter("interestRateType");
-    }
 
-%>
 <html>
 
 <head>
@@ -46,6 +30,23 @@
             text-align: center;
         }
     </style>
+    <%
+        ArrayList<InterestRate> list = (ArrayList<InterestRate>) request.getAttribute("interestRateList");
+        HashMap<String, String> errors = (HashMap<String, String>) request.getAttribute("errors");
+        String creditValue = "";
+        String interestRateAmount = "";
+        String interestPercent = "";
+        String interestConstPay = "";
+        String interestRateType = "";
+        if (list != null) {
+            creditValue = request.getParameter("creditValue");
+            interestRateAmount = request.getParameter("interestRateAmount");
+            interestPercent = request.getParameter("interestPercent");
+            interestConstPay = request.getParameter("interestConstPay");
+            interestRateType = request.getParameter("interestRateType");
+        }
+
+    %>
 </head>
 <body>
 <div class="container">

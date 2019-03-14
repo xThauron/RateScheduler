@@ -20,7 +20,7 @@ public class SchedulerFilter implements Filter {
         response.setCharacterEncoding("UTF-8");
 
         String creditValueParam = request.getParameter("creditValue");
-        String interestRateAmountParam = request.getParameter("interestPercent");
+        String interestRateAmountParam = request.getParameter("interestRateAmount");
         String interestPercentParam = request.getParameter("interestPercent");
         String interestConstPayParam = request.getParameter("interestConstPay");
         String interestRateTypeParam = request.getParameter("interestRateType");
