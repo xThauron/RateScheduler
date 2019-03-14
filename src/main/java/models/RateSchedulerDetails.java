@@ -7,11 +7,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 public class RateSchedulerDetails {
-    @NotEmpty
-    @DecimalMin("1")
-    private String creditValueStr;
-
-
     private double creditValue;
     private int interestRateAmount;
     private double interestPercent;
