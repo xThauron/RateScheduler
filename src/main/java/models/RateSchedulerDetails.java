@@ -1,11 +1,5 @@
 package models;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
-
 public class RateSchedulerDetails {
     private double creditValue;
     private int interestRateAmount;
